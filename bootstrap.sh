@@ -13,7 +13,7 @@ mkdir -p "$HOME/proj"
 cd "$HOME/proj"
 git clone $GIT_URL
 cd dotfiles-ansible/ansible
-sudo ansible-galaxy collection install -r requirements.yml
+ansible-galaxy collection install -r requirements.yml
 ansible-playbook --ask-become-pass ./dotfiles.yml $@
 
 
