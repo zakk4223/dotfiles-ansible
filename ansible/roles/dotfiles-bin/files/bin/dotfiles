@@ -9,4 +9,5 @@ PLAYBOOK_NAME="dotfiles.yml"
 #run playbook
 
 
+git -C "$DOTFILES_BASE" pull
 ansible-playbook --ask-become-pass "$ANSIBLE_BASE/$PLAYBOOK_NAME" $@
