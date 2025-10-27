@@ -1,0 +1,6 @@
+- name: Install Firefox 
+  ansible.builtin.package: 
+    name: "firefox"
+    state: present
+  become: yes
+
