@@ -1,0 +1,4 @@
+- name: Install AUR helper
+  kewlfft.aur.aur:
+    name: "{{ aur_helper_package }}"
+

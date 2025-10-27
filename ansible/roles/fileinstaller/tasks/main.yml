@@ -1,0 +1,5 @@
+- name: Install files for role
+  ansible.builtin.copy:
+    src: "{{ [ansible_parent_role_paths[0], 'files'] | path_join }}"
+    dest: "{{ dotfile_install_base }}/"
+    mode: file_mode

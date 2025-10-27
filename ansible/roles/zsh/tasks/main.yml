@@ -1,0 +1,15 @@
+- name: Install ZSH
+  ansible.builtin.package: 
+    name: "zsh"
+    state: present
+
+- name: Install ZSH files
+  ansible.builtin.include_role: 
+    name: "fileinstaller"
+
+- name: Change user shell to ZSH
+  become: true
+  ansible.builtin.user:
+    name: "{{ ansible_user_id }}" 
+    shell: /bin/zsh
+

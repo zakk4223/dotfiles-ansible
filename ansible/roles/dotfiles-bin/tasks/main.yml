@@ -1,0 +1,6 @@
+- name: Install dotfiles script
+  ansible.builtin.include_role: 
+    name: "fileinstaller"
+  vars:
+    file_mode: preserve
+

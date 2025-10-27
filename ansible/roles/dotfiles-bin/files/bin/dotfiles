@@ -1,0 +1,12 @@
+#!/bin/sh
+
+
+DOTFILES_BASE="$HOME/proj/dotfiles-ansible"
+ANSIBLE_BASE="$DOTFILES_BASE/ansible"
+PLAYBOOK_NAME="dotfiles.yml"
+
+
+#run playbook
+
+
+ansible-playbook --ask-become-pass "$ANSIBLE_BASE/$PLAYBOOK_NAME" $@

@@ -1,0 +1,39 @@
+- name: Dotfiles and environment setup
+  hosts: localhost
+  connection: local
+  gather_facts: true
+
+  tasks:
+  - name: Common variables
+    ansible.builtin.include_vars: "vars/common.yml"
+
+  - name: Host variables
+    ansible.builtin.include_vars: "vars/{{ ansible_hostname }}.yml"
+
+  - name: Ensure shell role
+    when: host_roles is defined and preferred_shell is defined
+    set_fact:
+        host_roles: "{{ host_roles + [preferred_shell] }}"
+
+  - name: Ensure terminal role
+    when: host_roles is defined and preferred_terminal is defined
+    set_fact:
+        host_roles: "{{ host_roles + [preferred_terminal] }}"
+
+  - name: Ensure dotfiles role
+    when: host_roles is defined
+    set_fact:
+        host_roles: "{{ host_roles + 'dotfiles-bin' }}"
+
+  - name: Install AUR helper on Arch
+    when: ansible_distribution == "ArchLinux" 
+    include_role:
+        name: "aur"
+
+  - name: Include roles
+    when: host_roles is defined
+    include_role:
+        name: "{{ role_item }}"
+    loop: "{{ host_roles }}"
+    loop_control:
+        loop_var: role_item

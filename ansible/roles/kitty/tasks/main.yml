@@ -1,0 +1,8 @@
+- name: Install Kitty 
+  ansible.builtin.package: 
+    name: "kitty"
+    state: present
+
+- name: Install Kitty files
+  ansible.builtin.include_role: 
+    name: "fileinstaller"
