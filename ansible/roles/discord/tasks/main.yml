@@ -1,0 +1,7 @@
+- ansible.builtin.include_role:
+    name: flatpak
+
+- name: Install discord
+  community.general.flatpak:
+    name: com.discordapp.Discord
+    state: latest
