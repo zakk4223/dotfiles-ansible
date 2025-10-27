@@ -22,4 +22,6 @@
 - name: Install AUR helper
   kewlfft.aur.aur:
     name: "{{ aur_helper_package }}"
+  become: yes
+  become_user: aur_builder
 
