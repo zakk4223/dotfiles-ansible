@@ -13,17 +13,17 @@
   - name: Ensure shell role
     when: host_roles is defined and preferred_shell is defined
     set_fact:
-        host_roles: "{{ host_roles + [preferred_shell] }}"
+        host_roles: "{{ host_roles }} + [ '{{ preferred_shell }}' ]"  
 
   - name: Ensure terminal role
     when: host_roles is defined and preferred_terminal is defined
     set_fact:
-        host_roles: "{{ host_roles + [preferred_terminal] }}"
+        host_roles: "{{ host_roles }} + [ '{{ preferred_terminal }}' ]"  
 
   - name: Ensure dotfiles role
     when: host_roles is defined
     set_fact:
-        host_roles: "{{ host_roles + 'dotfiles-bin' }}"
+        host_roles: "{{ host_roles }} + [ 'dotfiles-bin' ]"  
 
   - name: Install AUR helper on Arch
     when: ansible_distribution == "ArchLinux" 
