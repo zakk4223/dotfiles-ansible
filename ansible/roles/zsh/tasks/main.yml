@@ -2,6 +2,7 @@
   ansible.builtin.package: 
     name: "zsh"
     state: present
+  become: yes
 
 - name: Install ZSH files
   ansible.builtin.include_role: 
