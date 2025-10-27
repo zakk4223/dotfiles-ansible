@@ -1,3 +1,24 @@
+#create an aur user for building and installing packages.
+#you could just setup the current user as a NOPASSWD pacman user
+#but that seems more dangerous than just a regular passwordless user
+
+
+- name: Create aur_builder user
+  become: yes
+  ansible.builtin.user:
+    name: aur_builder
+    create_home: yes
+    group: wheel
+
+- name: Allow aur_builder to run pacman
+  become: yes
+  ansible.builtin.lineinfile:
+    path: /etc/sudoers.d/11-install-aur_builder
+    line: 'aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman'
+    create: yes
+    mode: 0644
+    validate: 'visudo -cf %s'
+
 - name: Install AUR helper
   kewlfft.aur.aur:
     name: "{{ aur_helper_package }}"
