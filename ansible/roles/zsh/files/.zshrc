@@ -327,7 +327,7 @@ vim() {
 		nvim "$@"
 	elif command -v vim >/dev/null 2>&1; then
 		command vim "$@"
-	else command -v vi >/dev/null 2>&1; then
+	else 
 		vi "$@"
 	fi
 }
@@ -339,7 +339,7 @@ vi() {
 		nvim "$@"
 	elif command -v vim >/dev/null 2>&1; then
 		vim "$@"
-	else command -v vi >/dev/null 2>&1; then
+	else
 		command vi "$@"
 	fi
 }
