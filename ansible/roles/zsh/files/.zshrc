@@ -324,6 +324,29 @@ for config_file in ~/.config/shell_aliases/*; do
 	[ -f "$config_file" ] && source "$config_file"
 done
 
+vim() {
+	if command -v lazyvim >/dev/null 2>&1; then
+		lazyvim "$@"
+	elif command -v nvim >/dev/null 2>&1; then
+		nvim "$@"
+	elif command -v vim >/dev/null 2>&1; then
+		command vim "$@"
+	else command -v vi >/dev/null 2>&1; then
+		vi "$@"
+	fi
+}
+
+vi() {
+	if command -v lazyvim >/dev/null 2>&1; then
+		lazyvim "$@"
+	elif command -v nvim >/dev/null 2>&1; then
+		nvim "$@"
+	elif command -v vim >/dev/null 2>&1; then
+		vim "$@"
+	else command -v vi >/dev/null 2>&1; then
+		command vi "$@"
+	fi
+}
 
 export EDITOR=lazyvim
 export VISUAL=lazyvim

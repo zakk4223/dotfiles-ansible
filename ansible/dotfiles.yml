@@ -45,14 +45,3 @@
         loop_var: role_item
 
 
-#I'm too lazy to remember what editor may or may not be installed 
-#I have severe finger macro for 'vim' so I just alias it to vi/nvim/lazyvim
-#Looking forward to the day where I alias it to helix or zed (or emacs!)
-  - name: Setup editor alias
-    include_role: 
-      name: "aliases"
-    vars:
-      alias_filename: "editor_alias"
-      alias_data:
-        vim: " {{ installed_editor | default('vi') }}"
-
