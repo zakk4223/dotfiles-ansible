@@ -202,8 +202,6 @@ alias folders='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
 alias grep='grep --color=auto'
 alias ls="ls --color=auto"
 alias mtc="f(){ docker run -it --rm -v "$(pwd)":/mister misterkun/toolchain "$@"; unset -f f; }; f"
-alias vim="lazyvim"
-alias vi="lazyvim"
 
 
 ### Bind keys
@@ -317,8 +315,6 @@ unset "_postpatcomps[*]"
 
 alias ls="ls --color=auto"
 alias mtc="f(){ docker run -it --rm -v "$(pwd)":/mister misterkun/toolchain "$@"; unset -f f; }; f"
-#alias vim="lazyvim"
-#alias vi="lazyvim"
 
 for config_file in ~/.config/shell_aliases/*; do
 	[ -f "$config_file" ] && source "$config_file"
@@ -348,7 +344,7 @@ vi() {
 	fi
 }
 
-export EDITOR=lazyvim
-export VISUAL=lazyvim
+export EDITOR=vim
+export VISUAL=vim
 
 export QSYS_ROOTDIR="/home/zakk/intelFPGA_lite/22.1std/quartus/sopc_builder/bin"

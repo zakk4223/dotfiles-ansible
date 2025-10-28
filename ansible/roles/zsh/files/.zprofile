@@ -3,8 +3,6 @@ export PATH=$PATH:~/bin:~/.local/bin:~/.cargo/bin
 
 alias ls="ls --color=auto"
 alias mtc="f(){ docker run -it --rm -v "$(pwd)":/mister misterkun/toolchain "$@"; unset -f f; }; f"
-alias vim="lazyvim"
-alias vi="lazyvim"
 
 
 export EDITOR=lazyvim
