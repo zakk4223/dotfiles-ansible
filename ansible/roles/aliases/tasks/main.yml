@@ -1,0 +1,22 @@
+- name: Create shell aliases directory
+  ansible.builtin.file:
+    path: "{{ [dotfile_config_base, 'shell_aliases'] | path_join }}"
+    state: directory
+    mode: '0755'
+
+
+- name: Create aliases
+  ansible.builtin.lineinfile:
+    path: "{{ [dotfile_config_base, 'shell_aliases', alias_filename] | path_join }}"
+    line: "alias {{ item.key }}={{ item.value }}"
+    create: true
+  loop: "{{ alias_data | dict2items }}" 
+
+
+
+
+
+
+
+
+

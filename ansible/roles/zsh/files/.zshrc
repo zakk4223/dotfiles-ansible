@@ -317,8 +317,12 @@ unset "_postpatcomps[*]"
 
 alias ls="ls --color=auto"
 alias mtc="f(){ docker run -it --rm -v "$(pwd)":/mister misterkun/toolchain "$@"; unset -f f; }; f"
-alias vim="lazyvim"
-alias vi="lazyvim"
+#alias vim="lazyvim"
+#alias vi="lazyvim"
+
+for config_file in ~/.config/shell_alises/*; do
+	[ -f "$config_file" ] && source "$config_file"
+done
 
 
 export EDITOR=lazyvim

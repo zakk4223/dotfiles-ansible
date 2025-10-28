@@ -1,6 +1,8 @@
 dotfile_install_base: "{{ ansible_env.HOME }}"
-dotfile_config_base: "{{ ansible_env.HOME }}/.config"
+dotfile_config_base: "{{ dotfile_install_base }}/.config"
 preferred_shell: "zsh"
 preferred_terminal: "kitty"
 preferred_launcher: "walker"
+
+
 

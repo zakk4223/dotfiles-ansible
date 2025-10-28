@@ -10,6 +10,12 @@
   - name: Host variables
     ansible.builtin.include_vars: "vars/{{ ansible_hostname }}.yml"
 
+  - name: Combine role lists
+    when: host_roles is defined and common_roles is defined
+    set_fact: 
+        host_roles: "{{ common_roles + host_roles }}"
+
+
   - name: Ensure shell role
     when: host_roles is defined and preferred_shell is defined
     set_fact:
@@ -25,11 +31,11 @@
     set_fact:
         host_roles: "{{ host_roles + [ 'dotfiles-bin' ] }}"  
 
-  - name: Install AUR helper on Arch
-    when: ansible_distribution == "Archlinux" 
-    include_role:
-        name: "aur"
-
+#  - name: Install AUR helper on Arch
+#    when: ansible_distribution == "Archlinux" 
+#    include_role:
+#        name: "aur"
+#
   - name: Include roles
     when: host_roles is defined
     include_role:
@@ -37,3 +43,16 @@
     loop: "{{ host_roles }}"
     loop_control:
         loop_var: role_item
+
+
+#I'm too lazy to remember what editor may or may not be installed 
+#I have severe finger macro for 'vim' so I just alias it to vi/nvim/lazyvim
+#Looking forward to the day where I alias it to helix or zed (or emacs!)
+  - name: Setup editor alias
+    include_role: 
+      name: "aliases"
+    vars:
+      alias_filename: "editor_alias"
+      alias_data:
+        vim: " {{ installed_editor | default('vi') }}"
+
