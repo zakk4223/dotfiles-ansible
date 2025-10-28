@@ -320,7 +320,7 @@ alias mtc="f(){ docker run -it --rm -v "$(pwd)":/mister misterkun/toolchain "$@"
 #alias vim="lazyvim"
 #alias vi="lazyvim"
 
-for config_file in ~/.config/shell_alises/*; do
+for config_file in ~/.config/shell_aliases/*; do
 	[ -f "$config_file" ] && source "$config_file"
 done
 
