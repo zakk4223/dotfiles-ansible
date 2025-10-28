@@ -316,7 +316,7 @@ unset "_postpatcomps[*]"
 alias ls="ls --color=auto"
 alias mtc="f(){ docker run -it --rm -v "$(pwd)":/mister misterkun/toolchain "$@"; unset -f f; }; f"
 
-for config_file in ~/.config/shell_aliases/*; do
+for config_file in ~/.config/shell_aliases/*(N); do
 	[ -f "$config_file" ] && source "$config_file"
 done
 
