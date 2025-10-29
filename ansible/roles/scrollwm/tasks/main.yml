@@ -22,8 +22,9 @@
 
 - name: Configure uwsm for scroll
   when: '"uwsm" in wayland_scroll_roles' 
+  block:
     - name: "Create wayland-session"
-      ansible.builtin.copy:
+      ansible.builtin.file:
         path: "/usr/local/share/wayland-sessions/"
         state: directory
         mode: '0755'
