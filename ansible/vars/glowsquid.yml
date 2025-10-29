@@ -2,3 +2,7 @@ host_roles:
   - zsh
   - discord
   - firefox
+wayland_scroll_roles:
+  - swaysome
+  - udiskie
+  - walker

@@ -1,0 +1,14 @@
+- name: Install Walker
+  kewlfft.aur.aur: 
+    name: "walker"
+    state: present
+  become: yes
+  become_user: aur_builder
+
+- name: Install Walker files
+  ansible.builtin.include_role: 
+    name: "fileinstaller"
+
+- include_role: elephant
+  vars:
+    compositor_wants: "{{ compositor_wants }}"

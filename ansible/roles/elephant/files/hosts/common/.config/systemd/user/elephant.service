@@ -1,0 +1,17 @@
+
+[Unit]
+Description=Elephant
+After=wayland-wm@hyprland.desktop.service
+After=wayland-wm@River.service
+After=wayland-wm@scroll.service
+
+[Service]
+Type=simple
+ExecStart=elephant
+Restart=on-failure
+
+[Install]
+WantedBy=wayland-wm@hyprland.desktop.service
+WantedBy=wayland-wm@River.service
+WantedBy=wayland-wm@scroll.service
+							

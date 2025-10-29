@@ -1,8 +1,14 @@
 dotfile_install_base: "{{ ansible_env.HOME }}"
-dotfile_config_base: "{{ dotfile_install_base }}/.config"
+dotfile_config_base: "{{ [dotfile_install_base, '.config'] | path_join }}"
+systemd_user_dir: " {{ [dotfile_config_base, 'systemd', 'user'] | path_join }}"
 preferred_shell: "zsh"
 preferred_terminal: "kitty"
 preferred_launcher: "walker"
+wayland_use_uwsm: true
+wayland_scroll_roles:
+  - swaync
+  - swaysome
+  - udiskie
 
 
 

@@ -1,0 +1,8 @@
+[Unit]
+Description=Swaysome: AwesomeWM style workspaces for Sway
+PartOf=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/swaysome init 1
+

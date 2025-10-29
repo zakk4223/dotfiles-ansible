@@ -1,0 +1,16 @@
+- name: Install Swaysome
+  kewlfft.aur.aur:
+    name: "swaysome-git"
+    state: present
+  become: yes
+  become_user: aur_builder
+
+- name: Install Swaysome files
+  ansible.builtin.include_role: 
+    name: "fileinstaller"
+
+- name: Setup systemd wants for compositor
+  ansible.builtin.file:
+    src: "{{ [systemd_user_dir, 'swaysome.service'] | path_join }} "
+    dest: "{{ [systemd_user_dir, compositor_wants, 'swaysome.service']  | path_join }} "
+  when: compositor_wants | default(false) | bool 

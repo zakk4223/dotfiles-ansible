@@ -1,0 +1,7 @@
+- name: Install Uwsm 
+  ansible.builtin.package: 
+    name: "uwsm"
+    state: present
+  become: yes
+  when: wayland_use_uwsm | default(false) | bool 
+

@@ -1,0 +1,11 @@
+[Unit]
+Description=Udiskie
+After=graphical-session.target
+
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/udiskie --appindicator -t
+Restart=on-failure
+Slice=background-graphical.slice
+

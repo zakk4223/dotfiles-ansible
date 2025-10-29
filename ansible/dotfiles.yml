@@ -26,16 +26,17 @@
     set_fact:
         host_roles: "{{ host_roles + [ preferred_terminal ] }}"  
 
+
   - name: Ensure dotfiles role
     when: host_roles is defined
     set_fact:
         host_roles: "{{ host_roles + [ 'dotfiles-bin' ] }}"  
 
-#  - name: Install AUR helper on Arch
-#    when: ansible_distribution == "Archlinux" 
-#    include_role:
-#        name: "aur"
-#
+  - name: Install AUR helper on Arch
+    when: ansible_distribution == "Archlinux" 
+    include_role:
+        name: "aur"
+
   - name: Include roles
     when: host_roles is defined
     include_role:
