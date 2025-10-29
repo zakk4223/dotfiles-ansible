@@ -20,6 +20,7 @@
     create: true
   when: preferred_terminal | default(false) | bool
 
+- name: Configure uwsm for scroll
   block:
     - name: Install UWSM desktop override file
       ansible.builtin.copy:
@@ -40,6 +41,6 @@
         path: "{{ [dotfile_config_base, 'scroll', 'config.d', '99-uwsm_activate.conf'] | path_join }}"
         line: "exec uwsm finalize SWAYSOCK I3SOCK SCROLLSOCK"
         create: true
-  when: 'uwsm' in wayland_scroll_roles
+when: 'uwsm' in wayland_scroll_roles
 
 

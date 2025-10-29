@@ -6,9 +6,10 @@ preferred_terminal: "kitty"
 preferred_launcher: "walker"
 wayland_use_uwsm: true
 wayland_scroll_roles:
-  - swaync
   - swaysome
   - udiskie
+  - walker
+  - uwsm
 
 
 
