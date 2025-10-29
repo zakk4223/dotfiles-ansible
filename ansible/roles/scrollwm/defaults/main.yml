@@ -1,0 +1,1 @@
+scrollwm_compositor_wants: "wayland-wm@scroll.service.wants"

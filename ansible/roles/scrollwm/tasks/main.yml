@@ -11,27 +11,28 @@
     path: "{{ [dotfile_config_base, 'scroll', 'vars.d', 'launcher.conf'] | path_join }}"
     line: "set $menu {{ preferred_launcher }}"
     create: true
-  when: preferred_launcher | default(false) | bool
+  when: preferred_launcher is defined 
 
 - name: Create Terminal config snippet 
   ansible.builtin.lineinfile:
     path: "{{ [dotfile_config_base, 'scroll', 'vars.d', 'terminal.conf'] | path_join }}"
     line: "set $menu {{ preferred_terminal }}"
     create: true
-  when: preferred_terminal | default(false) | bool
+  when: preferred_terminal is defined
 
 - name: Configure uwsm for scroll
+  when: '"uwsm" in wayland_scroll_roles' 
   block:
     - name: Install UWSM desktop override file
       ansible.builtin.copy:
-        src: "{{[ 'uwsm', 'scroll.desktop'] ] | path_join }}"
+        src: "{{[ 'uwsm', 'scroll.desktop'] | path_join }}"
         dest: "/usr/local/share/wayland-sessions/scroll.desktop"
         mode: "{{ file_mode | default('preserve') }}"
     - name: Include ScrollWM roles
       include_role:
         name: "{{ role_item }}"
       vars: 
-        compositor_wants: 'wayland-wm@scroll.service.wants'
+        compositor_wants: "{{ scrollwm_compositor_wants }}"
       loop: "{{ wayland_scroll_roles }}"
       loop_control:
         loop_var: role_item
@@ -41,6 +42,5 @@
         path: "{{ [dotfile_config_base, 'scroll', 'config.d', '99-uwsm_activate.conf'] | path_join }}"
         line: "exec uwsm finalize SWAYSOCK I3SOCK SCROLLSOCK"
         create: true
-when: 'uwsm' in wayland_scroll_roles
 
 

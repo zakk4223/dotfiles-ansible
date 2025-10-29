@@ -9,6 +9,5 @@
   ansible.builtin.include_role: 
     name: "fileinstaller"
 
-- include_role: elephant
-  vars:
-    compositor_wants: "{{ compositor_wants }}"
+- include_role: 
+    name: elephant

@@ -3,5 +3,5 @@
     name: "uwsm"
     state: present
   become: yes
-  when: wayland_use_uwsm | default(false) | bool 
+  when: '"uwsm" in wayland_scroll_roles' 
 
