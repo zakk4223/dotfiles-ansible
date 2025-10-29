@@ -35,6 +35,11 @@
         dest: "/usr/local/share/wayland-sessions/scroll.desktop"
         mode: "{{ file_mode | default('preserve') }}"
       become: yes
+    - name: "Create wants directory"
+      ansible.builtin.file:
+        path: "{{ [systemd_user_dir, scrollwm_compositor_wants] | path_join }}/"
+        state: directoy
+        mode: '0755'
     - name: Include ScrollWM roles
       include_role:
         name: "{{ scroll_role_item }}"
