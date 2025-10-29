@@ -12,7 +12,7 @@
 
 - name: Get firefox profile name
   shell: |
-      grep '^Default=' {{ dotfile_install_base }}/.mozilla/firefox/intalls.ini | \
+      grep '^Default=' {{ dotfile_install_base }}/.mozilla/firefox/installs.ini | \
       cut -f2 -d'='
   register: firefox_profile_name
   changed_when: false
@@ -20,7 +20,7 @@
 - name: Copy sync config
   ansible.builtin.copy:
     src: "sync-data/"
-    dest: "{{ dotfile_install_base }}/.mozilla/firefox/{{ firefox_profile_name }}"
+    dest: "{{ dotfile_install_base }}/.mozilla/firefox/{{ firefox_profile_name.stdout }}"
     mode: '0600'
     force: no
 
