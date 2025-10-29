@@ -42,7 +42,7 @@
         compositor_wants: "{{ scrollwm_compositor_wants }}"
       loop: "{{ wayland_scroll_roles }}"
       loop_control:
-        loop_var: role_item
+        loop_var: scroll_role_item
       when: wayland_scroll_roles is defined
     - name: Create UWSM activation config snippet 
       ansible.builtin.lineinfile:
