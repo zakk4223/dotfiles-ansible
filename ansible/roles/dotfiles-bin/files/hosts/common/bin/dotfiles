@@ -10,4 +10,4 @@ PLAYBOOK_NAME="dotfiles.yml"
 
 
 git -C "$DOTFILES_BASE" pull
-ansible-playbook --ask-become-pass "$ANSIBLE_BASE/$PLAYBOOK_NAME" $@
+ansible-playbook --ask-become-pass "$ANSIBLE_BASE/$PLAYBOOK_NAME" --vault-password-file ~/.ansible-vault.txt $@
