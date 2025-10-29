@@ -6,6 +6,10 @@
   become_user: aur_builder
 
 
+- name: Install ScrollWM files
+  ansible.builtin.include_role: 
+    name: "fileinstaller"
+
 - name: Create Launcher config snippet 
   ansible.builtin.lineinfile:
     path: "{{ [dotfile_config_base, 'scroll', 'vars.d', 'launcher.conf'] | path_join }}"
