@@ -37,7 +37,7 @@
       become: yes
     - name: Include ScrollWM roles
       include_role:
-        name: "{{ role_item }}"
+        name: "{{ scroll_role_item }}"
       vars: 
         compositor_wants: "{{ scrollwm_compositor_wants }}"
       loop: "{{ wayland_scroll_roles }}"
