@@ -12,7 +12,7 @@
 
 - name: Get firefox profile name
   shell: |
-      grep '^Default=' {{ dotfile_install_base }}/.mozilla/firefox/intalls.ini" | \
+      grep '^Default=' {{ dotfile_install_base }}/.mozilla/firefox/intalls.ini | \
       cut -f2 -d'='
   register: firefox_profile_name
   changed_when: false
