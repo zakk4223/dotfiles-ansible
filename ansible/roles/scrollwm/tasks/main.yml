@@ -37,7 +37,7 @@
       become: yes
     - name: "Create wants directory"
       ansible.builtin.file:
-        path: "{{ [systemd_user_dir, scrollwm_compositor_wants] | path_join }}/"
+        path: "{{[systemd_user_dir, scrollwm_compositor_wants] | path_join }}/"
         state: directory
         mode: '0755'
     - name: Include ScrollWM roles
