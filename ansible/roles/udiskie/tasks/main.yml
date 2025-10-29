@@ -12,4 +12,5 @@
   ansible.builtin.file:
     src: "{{ [systemd_user_dir, 'udiskie.service'] | path_join }} "
     dest: "{{ [systemd_user_dir, compositor_wants, 'udiskie.service']  | path_join }} "
+    state: link
   when: compositor_wants | default(false) | bool 
