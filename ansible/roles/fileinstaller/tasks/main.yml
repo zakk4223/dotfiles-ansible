@@ -1,5 +1,20 @@
-- name: Install files for role
+- name: Install common files for role
   ansible.builtin.copy:
-    src: "{{ [ansible_parent_role_paths[0], 'files/'] | path_join }}"
+    src: "{{ [ansible_parent_role_paths[0], 'files', 'common/'] | path_join }}"
     dest: "{{ dotfile_install_base }}/"
     mode: "{{ file_mode | default('preserve') }}"
+
+
+- name: Check for host specific file directory
+  ansible.builtin.stat:
+    path: "{{ [ansible_parent_role_paths[0], 'files', ansible_hostname] | path_join }}"
+  delegate_to: localhost 
+  register: filecopy_host_dir
+
+- name: Install host files for role 
+  ansible.builtin.copy:
+    src: "{{ [ansible_parent_role_paths[0], 'files', ansible_hostname] | path_join }}/"
+    dest: "{{ dotfile_install_base }}/"
+    mode: "{{ file_mode | default('preserve') }}"
+  when: filecopy_host_dir.stat.exists and filecopy_host_dir.stat.isdir
+ 
