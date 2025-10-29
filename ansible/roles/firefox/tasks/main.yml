@@ -4,3 +4,23 @@
     state: present
   become: yes
 
+- name: Run firefox to generate profile
+  shell: |
+      timeout 10 firefox -headless || true
+  args:
+    creates: "{{ dotfile_install_base }}/.mozilla/firefox/installs.ini"
+
+- name: Get firefox profile name
+  shell: |
+      grep '^Default=' {{ dotfile_install_base }}/.mozilla/firefox/intalls.ini" | \
+      cut -f2 -d'='
+  register: firefox_profile_name
+  changed_when: false
+
+- name: Copy sync config
+  ansible.builtin.copy:
+    src: "sync-data/"
+    dest: "{{ dotfile_install_base }}/.mozilla/firefox/{{ firefox_profile_name }}"
+    mode: '0600'
+    force: no
+
