@@ -34,6 +34,7 @@
         src: "{{[ 'uwsm', 'scroll.desktop'] | path_join }}"
         dest: "/usr/local/share/wayland-sessions/scroll.desktop"
         mode: "{{ file_mode | default('preserve') }}"
+      become: yes
     - name: Include ScrollWM roles
       include_role:
         name: "{{ role_item }}"
