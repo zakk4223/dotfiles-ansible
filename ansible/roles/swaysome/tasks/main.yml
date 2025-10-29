@@ -1,6 +1,6 @@
 - name: Install Swaysome
   kewlfft.aur.aur:
-    name: "swaysome-git"
+    name: "swaysome"
     state: present
   become: yes
   become_user: aur_builder
