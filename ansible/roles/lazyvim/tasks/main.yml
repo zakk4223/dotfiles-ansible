@@ -19,3 +19,6 @@
 
 - ansible.builtin.include_role:
     name: nodejs 
+
+- ansible.builtin.include_role:
+    name: npm 
