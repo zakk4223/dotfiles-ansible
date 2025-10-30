@@ -7,3 +7,12 @@
 
 - ansible.builtin.include_role:
     name: lazygit 
+
+- ansible.builtin.include_role:
+    name: ripgrep 
+
+- ansible.builtin.include_role:
+    name: fd 
+
+- ansible.builtin.include_role:
+    name: treesitter 

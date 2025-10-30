@@ -12,6 +12,7 @@ wayland_scroll_roles:
   - uwsm
 common_roles:
   - zsh
+  - ripgrep
   - lazyvim 
   - lazygit
 

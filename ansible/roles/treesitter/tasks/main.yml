@@ -1,0 +1,18 @@
+- name: Install treesitter and language modules
+  ansible.builtin.package:
+    name:
+      - tree-sitter
+      - tree-sitter-bash
+      - tree-sitter-c
+      - tree-sitter-cli
+      - tree-sitter-lua
+      - tree-sitter-markdown
+      - tree-sitter-python
+      - tree-sitter-query
+      - tree-sitter-vim
+      - tree-sitter-vimdoc
+
+
+
+
+

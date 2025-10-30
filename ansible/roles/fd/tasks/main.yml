@@ -1,0 +1,4 @@
+- name: Install fd
+  ansible.builtin.package:
+    name: fd
+  become: yes
