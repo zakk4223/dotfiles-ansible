@@ -15,5 +15,6 @@ common_roles:
   - ripgrep
   - lazyvim 
   - lazygit
+  - archivers
 
 

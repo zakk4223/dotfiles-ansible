@@ -1,0 +1,8 @@
+- name: Install various archivers/unarchivers
+  ansible.builtin.package:
+    name:
+      - unzip
+      - zip
+      - unrar
+      - 7zip
+  become: yes
