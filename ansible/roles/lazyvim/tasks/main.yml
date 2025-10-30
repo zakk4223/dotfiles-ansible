@@ -16,3 +16,6 @@
 
 - ansible.builtin.include_role:
     name: treesitter 
+
+- ansible.builtin.include_role:
+    name: nodejs 
