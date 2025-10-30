@@ -11,6 +11,7 @@
       - tree-sitter-query
       - tree-sitter-vim
       - tree-sitter-vimdoc
+  become: yes
 
 
 
