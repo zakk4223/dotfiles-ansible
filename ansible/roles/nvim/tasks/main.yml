@@ -1,0 +1,7 @@
+- name: Install Nvim
+  ansible.builtin.package:
+    name: "nvim"
+    state: present
+
+
+

@@ -4,6 +4,9 @@
     state: present
   become: yes
 
+- ansible.builtin.include_role:
+    name: 'nvim'
+
 - name: Install Kitty files
   ansible.builtin.include_role: 
     name: "fileinstaller"

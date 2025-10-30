@@ -1,0 +1,8 @@
+- name: Install lazyvim 
+  ansible.builtin.include_role:
+    name: fileinstaller
+
+- ansible.builtin.include_role:
+    name: 
+      - nvim
+      - lazygit
