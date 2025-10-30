@@ -1,3 +1,4 @@
 - name: Install lazygit
   ansible.builtin.package:
     name: lazygit
+  become: yes

@@ -10,6 +10,9 @@ wayland_scroll_roles:
   - udiskie
   - walker
   - uwsm
-
+host_roles:
+  - zsh
+  - lazyvim 
+  - lazygit
 
 

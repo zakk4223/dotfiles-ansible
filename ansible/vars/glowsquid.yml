@@ -1,5 +1,4 @@
 host_roles:
-  - zsh
   - discord
   - firefox
   - scrollwm
