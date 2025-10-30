@@ -3,6 +3,7 @@
     name: fileinstaller
 
 - ansible.builtin.include_role:
-    name: 
-      - nvim
-      - lazygit
+    name: nvim
+
+- ansible.builtin.include_role:
+    name: lazygit 
