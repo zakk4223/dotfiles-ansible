@@ -1,4 +1,11 @@
-- name: Install waybar
+- name: Uninstall waybar (using waybar-git)
+  ansible.builtin.package: 
+    name: "waybar"
+    state: absent 
+  become: yes
+
+
+- name: Install waybar-git
   kewlfft.aur.aur: 
     name: "waybar-git"
     state: present
