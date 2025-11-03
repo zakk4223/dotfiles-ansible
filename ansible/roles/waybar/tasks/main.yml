@@ -1,0 +1,10 @@
+- name: Install waybar
+  kewlfft.aur.aur: 
+    name: "waybar-git"
+    state: present
+  become: yes
+  become_user: aur_builder
+
+- name: Install waybar files 
+  ansible.builtin.include_role: 
+    name: "fileinstaller"

@@ -1,0 +1,294 @@
+@import '/home/zakk/.config/waybar/colors.css';
+
+#custom-notification,
+#pulseaudio {
+	font-size: 20px;
+}
+
+window#waybar {
+    background-color: transparent;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces button, #tags button {
+    padding: 0px 5px;
+    margin: 4px 3px;
+    border-radius: 15px;
+    border: 0px;
+    color: @textcolor1; 
+    background-color: @workspacesbackground1;
+    transition: all 0.3s ease-in-out;
+    opacity: 1.0;
+}
+
+#workspaces button.active, #tags button.focused {
+    color: @workspacesactivetext;
+    background: @workspacesbackground1; 
+    border-radius: 15px;
+    min-width: 40px;
+    transition: all 0.3s ease-in-out;
+    opacity:1.0;
+}
+
+#workspaces button:hover, #tags button:hover {
+    color: black;
+    background: @workspacesbackground2;
+    border-radius: 15px;
+    opacity:1.0;
+}
+
+#workspaces button.urgent, #tags button.urgent {
+    background-color: #eb4d4b;
+
+}
+
+
+#tags button:not(.occupied):not(.focused) {
+  font-size: 0px;
+  min-width: 0;
+  min-height: 0;
+  margin: -17px;
+  opacity: 0;
+  box-shadow: none;
+  background-color: transparent;
+  padding: 0 0;
+  border: 0;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#custom-notification,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#mpd,
+#custom-mediaplayer,
+#mpris,
+#custom-launcher,
+#custom-power,
+#custom-weather,
+#taskbar,
+#idle_inhibitor,
+#tray,
+#mpd {
+    padding: 0 10px;
+    color: @textcolor1;
+    border-radius: 15px;
+    background-color: @backgroundcolor1;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0px;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0px;
+}
+
+.modules-left > widget:first-child > #tags {
+    margin-left: 0px;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #tags {
+    margin-right: 0px;
+}
+
+#clock {
+    color: @textcolor2; 
+    margin: 4px 3px;
+}
+
+#battery {
+    color: #CDD6F4;
+}
+
+#battery.charging, #battery.plugged {
+    color: #CDD6F4;
+}
+
+@keyframes blink {
+    to {
+        background-color: #CDD6F4;
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: rgba(166, 227, 161, 0.8);
+    color: rgb(72, 76, 100);
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    color: @textcolor1;
+    margin: 4px 3px;
+}
+
+#memory {
+    color: @textcolor1;
+}
+
+#disk {
+    color: @textcolor1;
+}
+
+#backlight {
+    color: #CDD6F4;
+}
+
+#network {
+    color: @textcolor1;
+    margin: 4px 3px;
+}
+
+#network.disconnected {
+    color: red;
+}
+
+#pulseaudio, #custom-notification, #tray {
+    background-color: @backgroundcolor1;
+    font-size: 16px;
+    color: @textcolor1;
+    border-radius: 15px;
+    margin: 4px 3px;
+}
+
+#pulseaudio.muted {
+    background-color: @backgroundcolor1;
+    color: @textcolor1;
+}
+
+
+#custom-mediaplayer,#mpd,#mpris {
+    color: @textcolor1;
+    border-radius: 15px;
+    margin: 4px 3px;
+}
+
+#custom-media.custom-spotify {
+    background-color: #8EC5FC;
+    color: #CDD6F4;
+    border-radius: 20px;
+    margin-right: 5px;
+
+}
+
+#custom-media.custom-vlc {
+    background-color: #8EC5FC;
+    color: black;
+    border-radius: 20px;
+    margin-right: 5px;
+}
+
+#custom-power{
+    color: #CDD6F4;
+    font-size: 18px;
+    border-radius: 0px 20px 20px 0px;
+    margin-right: 5px;
+
+}
+
+#custom-launcher{
+    color: #ef9f76;
+    font-size: 20px;
+    border-radius: 20px 0px 0px 20px;
+    margin-left: 5px;
+
+}
+
+#custom-weather{
+    color: @textcolor1;
+    margin: 4px 3px;
+    font-size:13px;
+}
+
+#bluetooth {
+    color: #CDD6F4;
+}
+
+#taskbar {
+    background: @backgroundcolor1;
+    margin: 3px 15px 3px 0px;
+    padding:0px;
+    border-radius: 15px;
+    font-weight: normal;
+    font-style: normal;
+    opacity:0.8;
+    border: 3px solid @backgroundcolor1;
+}
+
+#taskbar button {
+    margin:0;
+    border-radius: 15px;
+    padding: 0px 5px 0px 5px;
+}
+
+#taskbar.empty {
+    background:transparent;
+    border:0;
+    padding:0;
+    margin:0;
+}
+#temperature {
+    color: #CDD6F4;
+}
+
+#temperature.critical {
+    color: #CDD6F4;
+    background: rgb(17,17,27);
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}y
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+#tray {
+    padding: 0px 15px 0px 0px;
+    background-color: @background;
+    opacity: 0.9
+}
+
+#idle_inhibitor {
+    color: #CDD6F4;
+    border-radius: 20px 0px 0px 20px;
+
+}
+
+#idle_inhibitor.activated {
+    color: rgba(166, 227, 161, 1);
+    border-radius: 20px 0px 0px 20px;
+
+}
+
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif; 
+    font-size: 13px;
+    min-height: 0;
+}
+
