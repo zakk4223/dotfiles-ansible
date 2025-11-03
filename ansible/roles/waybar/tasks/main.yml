@@ -25,6 +25,8 @@
 
 - name: Install fonts for waybar 
   ansible.builtin.package: 
-    name: "ttf-nerd-fonts-symbols"
+    name: 
+      - "ttf-nerd-fonts-symbols"
+      - "noto-fonts-emoji"
     state: present 
   become: yes
