@@ -30,11 +30,11 @@
 @define-color rosewater #f5e0dc;
 
 
-@define-color background @surface0
+@define-color background @surface0;
 @define-color workspacesbackground1 @background;
 @define-color workspacesbackground2 @sapphire;
 @define-color workspacesactivetext #fab387;
-@define-color textcolor1 @text
+@define-color textcolor1 @text;
 @define-color textcolor2 @green;
 @define-color backgroundcolor1 @background;
 
