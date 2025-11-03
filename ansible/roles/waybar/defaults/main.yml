@@ -1,0 +1,1 @@
+waybar_service_name: "waybar@{{ compositor_name }}.service"

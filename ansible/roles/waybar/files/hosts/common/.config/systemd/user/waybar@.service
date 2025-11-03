@@ -1,0 +1,12 @@
+[Unit]
+Description=Waybar
+After=graphical-session.target
+After=wayland-wm@%i.service
+
+[Service]
+Restart=on-failure
+RestartSec=5
+Type=exec
+ExecStart=/usr/bin/waybar -c %h/.config/waybar/%i.config
+Slice=background-graphical.slice
+

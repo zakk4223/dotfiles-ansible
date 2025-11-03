@@ -1,1 +1,2 @@
-scrollwm_compositor_wants: "wayland-wm@scroll.service.wants"
+scrollwm_compositor_name: "scroll"
+scrollwm_compositor_wants: "wayland-wm@{{ scrollwm_compositor_name }}.service.wants" 

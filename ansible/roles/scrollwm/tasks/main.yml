@@ -49,6 +49,7 @@
         name: "{{ scroll_role_item }}"
       vars: 
         compositor_wants: "{{ scrollwm_compositor_wants }}"
+        compositor_name: "{{ scrollwm_compositor_name }}"
       loop: "{{ wayland_scroll_roles }}"
       loop_control:
         loop_var: scroll_role_item
