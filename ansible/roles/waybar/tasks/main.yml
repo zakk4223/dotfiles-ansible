@@ -22,3 +22,9 @@
     dest: "{{[systemd_user_dir, compositor_wants, waybar_service_name]  | path_join }}"
     state: link
   when: compositor_wants is defined
+
+- name: Install fonts for waybar 
+  ansible.builtin.package: 
+    name: "ttf-nerd-fonts-symbols"
+    state: present 
+  become: yes
