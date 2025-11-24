@@ -1,0 +1,6 @@
+- name: Install aws-cli
+  kewlfft.aur.aur:
+    name: "aws-cli-bin"
+    state: present
+  become: yes
+  become_user: aur_builder

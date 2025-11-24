@@ -17,5 +17,6 @@ common_roles:
   - lazygit
   - archivers
   - slack
+  - aws-cli
 
 

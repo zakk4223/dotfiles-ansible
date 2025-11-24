@@ -1,6 +1,6 @@
 - name: Install common files for role
   ansible.builtin.copy:
-    src: "{{ [ansible_parent_role_paths[0], 'files', 'hosts', 'common/'] | path_join }}"
+    src: "{{ [ansible_parent_role_paths[0], 'files', 'hosts', 'common'] | path_join }}/"
     dest: "{{ dotfile_install_base }}/"
     mode: "{{ file_mode | default('preserve') }}"
 
