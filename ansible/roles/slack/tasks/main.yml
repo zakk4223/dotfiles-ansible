@@ -1,0 +1,7 @@
+- ansible.builtin.include_role:
+    name: flatpak
+
+- name: Install slack 
+  community.general.flatpak:
+    name: com.slack.Slack
+    state: latest
