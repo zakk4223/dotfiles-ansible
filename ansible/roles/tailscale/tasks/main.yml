@@ -1,0 +1,6 @@
+- name: Install tailscale
+  ansible.builtin.package:
+    name: 
+      - "tailscale"
+    state: present
+  become: yes
