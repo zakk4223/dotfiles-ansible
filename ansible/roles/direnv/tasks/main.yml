@@ -1,0 +1,20 @@
+- name: Install direnv
+  ansible.builtin.package: 
+    name: "direnv"
+    state: present
+  become: yes
+
+- name: Install direnv files 
+  ansible.builtin.include_role: 
+    name: "fileinstaller"
+
+- name: Create direnv config directory
+  ansible.builtin.file:
+    path: "{{[dotfile_config_base, 'direnv' }} | path_join}}"
+    state: directory
+    mode: '0744'
+
+- name: Install direnv config
+  ansible.builtin.template:
+    src: templates/direnv_toml.j2
+    dest: "{{ [dotfile_config_base, 'direnv', 'direnv.toml'] | path_join}}"
