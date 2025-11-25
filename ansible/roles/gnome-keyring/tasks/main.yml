@@ -6,5 +6,13 @@
     state: present
   become: yes
 
+- name: Enable gcr services
+  ansible.builtin.systemd_service:
+    name: gcr-ssh-agent.socket
+    enabled: true
+    state: started
+    scope: user
+
+
 
 
