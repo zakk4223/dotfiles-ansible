@@ -5,6 +5,7 @@ host_roles:
   - slack
   - polkit
   - gnome-keyring
+  - kubectl
 wayland_scroll_roles:
   - swaysome
   - udiskie
