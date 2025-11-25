@@ -10,7 +10,7 @@
 
 - name: Create direnv config directory
   ansible.builtin.file:
-    path: "{{[dotfile_config_base, 'direnv' }} | path_join}}"
+    path: "{{[dotfile_config_base, 'direnv'] | path_join}}"
     state: directory
     mode: '0744'
 
