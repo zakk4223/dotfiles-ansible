@@ -320,6 +320,10 @@ for config_file in ~/.config/shell_aliases/*(N); do
 	[ -f "$config_file" ] && source "$config_file"
 done
 
+for config_file in ~/.config/zsh/*(N); do
+	[ -f "$config_file" ] && source "$config_file"
+done
+
 vim() {
 	if command -v lazyvim >/dev/null 2>&1; then
 		lazyvim "$@"
