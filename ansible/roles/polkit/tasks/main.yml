@@ -1,0 +1,8 @@
+- name: Install polkit-gnome
+  ansible.builtin.package:
+    name: "polkit-gnome"
+    state: present
+  become: yes
+
+
+

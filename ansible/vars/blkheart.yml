@@ -2,3 +2,5 @@ host_roles:
   - discord 
   - firefox
   - scrollwm
+  - slack
+  - polkit

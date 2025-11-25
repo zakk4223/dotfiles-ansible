@@ -16,7 +16,6 @@ common_roles:
   - lazyvim 
   - lazygit
   - archivers
-  - slack
   - aws-cli
 
 
