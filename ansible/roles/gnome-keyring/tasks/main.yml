@@ -1,0 +1,10 @@
+- name: Install gnome-keyring
+  ansible.builtin.package:
+    name: 
+      - "gnome-keyring"
+      - "seahorse"
+    state: present
+  become: yes
+
+
+

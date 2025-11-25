@@ -4,3 +4,4 @@ host_roles:
   - scrollwm
   - slack
   - polkit
+  - gnome-keyring
