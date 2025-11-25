@@ -3,3 +3,4 @@
     name: 
       - "kubectl"
     state: present
+  become: yes
