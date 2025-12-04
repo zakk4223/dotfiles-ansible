@@ -19,5 +19,6 @@ common_roles:
   - archivers
   - aws-cli
   - jq
+  - docker
 
 
