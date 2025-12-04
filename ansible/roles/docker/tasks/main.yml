@@ -3,7 +3,7 @@
     name: 
       - "docker"
       - "docker-compose"
-      - "docker-buildkit"
+      - "docker-buildx"
     state: present
   become: yes
 
