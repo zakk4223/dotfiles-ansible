@@ -1,7 +1,7 @@
-- ansible.builtin.include_role:
-    name: flatpak
-
 - name: Install slack 
-  community.general.flatpak:
-    name: com.slack.Slack
-    state: latest
+  kewlfft.aur.aur: 
+    name:
+      - slack-desktop-wayland
+    state: present
+  become: yes
+  become_user: aur_builder
