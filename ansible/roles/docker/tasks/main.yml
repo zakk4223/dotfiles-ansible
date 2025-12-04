@@ -12,3 +12,10 @@
     enabled: true
     state: started
   become: yes
+
+- name: Add user to docker group 
+  ansible.builtin.user:
+    name: "{{ ansible_user_id }}" 
+    groups: docker 
+    append: yes
+
