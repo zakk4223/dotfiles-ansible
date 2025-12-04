@@ -1,0 +1,13 @@
+- name: Install docker 
+  ansible.builtin.package:
+    name: 
+      - "docker"
+    state: present
+  become: yes
+
+- name: Enable docker services
+  ansible.builtin.systemd_service:
+    name: docker
+    enabled: true
+    state: started
+  become: yes
