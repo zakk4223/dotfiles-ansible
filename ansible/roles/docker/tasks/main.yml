@@ -2,6 +2,7 @@
   ansible.builtin.package:
     name: 
       - "docker"
+      - "docker-compose"
     state: present
   become: yes
 
