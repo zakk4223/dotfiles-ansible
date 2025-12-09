@@ -4,3 +4,7 @@
       - "kubectl"
     state: present
   become: yes
+
+- name: Install kubectl files 
+  ansible.builtin.include_role: 
+    name: "fileinstaller"
