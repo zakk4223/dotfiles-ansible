@@ -1,5 +1,5 @@
 fzf_select() {
-	fzf --sync --query $1 --bind 'result:transform:
+	fzf --sync --query ${1:-" "} --bind 'result:transform:
 	  if [[ -n $FZF_QUERY ]]; then
 	    echo "track-current+clear-query"
 	  else
