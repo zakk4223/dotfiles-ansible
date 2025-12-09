@@ -4,6 +4,12 @@
     state: present
   become: yes
 
+- name: Install fzf
+  ansible.builtin.package: 
+    name: "fzf"
+    state: present
+  become: yes
+
 - name: Install ZSH files
   ansible.builtin.include_role: 
     name: "fileinstaller"
