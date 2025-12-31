@@ -1,0 +1,15 @@
+host_roles:
+  - discord
+  - firefox
+  - scrollwm
+  - slack
+  - polkit
+  - gnome-keyring
+  - kubectl
+  - tailscale
+wayland_scroll_roles:
+  - swaysome
+  - udiskie
+  - walker
+  - uwsm
+  - waybar
