@@ -1,0 +1,12 @@
+- name: Install sddm 
+  ansible.builtin.package:
+    name: 
+      - "sddm"
+    state: present
+  become: yes
+
+- name: Enable sddm
+  ansible.builtin.systemd_service:
+    name: sddm 
+    enabled: true
+  become: yes

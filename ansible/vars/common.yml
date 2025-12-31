@@ -20,5 +20,6 @@ common_roles:
   - aws-cli
   - jq
   - docker
+  - sddm
 
 
