@@ -11,6 +11,7 @@ wayland_scroll_roles:
   - walker
   - uwsm
 common_roles:
+  - ssh
   - zsh
   - direnv
   - ripgrep

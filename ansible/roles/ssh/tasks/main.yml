@@ -1,0 +1,11 @@
+- name: Create .ssh directory
+  ansible.builtin.file:
+    path: "{{ [ansible_env.HOME, '.ssh'] | path_join }}/"
+    state: directory
+    mode: '0700'
+
+- name: Install ssh files
+  ansible.builtin.include_role: 
+    name: "fileinstaller"
+  vars:
+    file_mode: '0600'
