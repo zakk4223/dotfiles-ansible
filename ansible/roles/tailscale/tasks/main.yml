@@ -4,3 +4,10 @@
       - "tailscale"
     state: present
   become: yes
+
+- name: Enable tailscale services
+  ansible.builtin.systemd_service:
+    name: tailscaled 
+    enabled: true
+    state: started
+  become: yes
