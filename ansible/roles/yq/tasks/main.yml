@@ -1,0 +1,15 @@
+- name: Remove base repo yq package
+  ansible.builtin.package: 
+    name: "yq"
+    state: absent
+  become: yes
+
+- name: Install go-yq package
+  kewlfft.aur.aur:
+    name: "go-yq"
+    state: present
+  become: yes
+  become_user: aur_builder
+
+
+
