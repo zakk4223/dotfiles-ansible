@@ -20,6 +20,7 @@ common_roles:
   - archivers
   - aws-cli
   - jq
+  - yq
   - docker
   - sddm
 

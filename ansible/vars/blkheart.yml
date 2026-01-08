@@ -5,5 +5,5 @@ host_roles:
   - slack
   - polkit
   - gnome-keyring
-  - kubectl
+  - k8dev
   - tailscale
