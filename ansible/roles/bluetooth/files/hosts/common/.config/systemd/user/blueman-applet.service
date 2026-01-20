@@ -1,0 +1,11 @@
+[Unit]
+Description=Blueman Applet
+After=graphical-session.target
+
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/blueman-applet
+Restart=on-failure
+Slice=background-graphical.slice
+

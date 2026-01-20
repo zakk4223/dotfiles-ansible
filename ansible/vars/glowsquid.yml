@@ -14,3 +14,4 @@ wayland_scroll_roles:
   - walker
   - uwsm
   - waybar
+  - bluetooth 

@@ -12,6 +12,8 @@ host_roles:
 wayland_scroll_roles:
   - swaysome
   - udiskie
+  - nmapplet
   - walker
   - uwsm
   - waybar
+  - bluetooth
