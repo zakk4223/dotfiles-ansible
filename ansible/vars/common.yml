@@ -10,6 +10,7 @@ wayland_scroll_roles:
   - udiskie
   - walker
   - uwsm
+  - nmapplet
 common_roles:
   - ssh
   - zsh

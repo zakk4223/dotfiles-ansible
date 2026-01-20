@@ -8,6 +8,7 @@ host_roles:
   - k8dev
   - tailscale
   - steam
+  - brightnessctl
 wayland_scroll_roles:
   - swaysome
   - udiskie

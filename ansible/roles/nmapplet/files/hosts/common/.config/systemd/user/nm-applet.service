@@ -1,0 +1,11 @@
+[Unit]
+Description=nm-applet
+After=graphical-session.target
+
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/nm-applet
+Restart=on-failure
+Slice=background-graphical.slice
+

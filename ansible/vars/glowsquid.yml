@@ -7,6 +7,7 @@ host_roles:
   - gnome-keyring
   - k8dev
   - tailscale
+  - brightnessctl
 wayland_scroll_roles:
   - swaysome
   - udiskie
