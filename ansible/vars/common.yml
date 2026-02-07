@@ -11,6 +11,8 @@ wayland_scroll_roles:
   - walker
   - uwsm
   - nmapplet
+  - waybar
+  - bluetooth
 common_roles:
   - ssh
   - zsh
@@ -23,6 +25,5 @@ common_roles:
   - jq
   - yq
   - docker
-  - sddm
 
 
