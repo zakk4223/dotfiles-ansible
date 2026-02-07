@@ -1,0 +1,47 @@
+
+profile {
+	output "LG Electronics LG ULTRAGEAR 008NTCZET747"  {
+    enable 
+    mode 3440x1440@160.00Hz 
+    position 1920,0 
+		adaptive_sync on
+  }
+	output "Dell Inc. DELL U2414H R9F1P45A34CL" {
+    enable 
+    mode 1920x1080@60Hz 
+    position 0,0
+  }
+
+	output "Dell Inc. DELL U2414H R9F1P45D5L8L" {
+    enable 
+    mode 1920x1080@60Hz 
+    position 5360,0
+  }
+	output "Samsung Electric Company SAMSUNG 0x01000E00" {
+    enable 
+    mode 3840x2160@60Hz 
+    position 7280,0
+  }
+}
+
+
+profile {
+	output "LG Electronics LG ULTRAGEAR 008NTCZET747"  {
+    enable 
+    mode 3440x1440@160.00Hz 
+    position 1920,0 
+		adaptive_sync on
+  }
+	output "Dell Inc. DELL U2414H R9F1P45A34CL" {
+    enable 
+    mode 1920x1080@60Hz 
+    position 0,0
+  }
+
+	output "Dell Inc. DELL U2414H R9F1P45D5L8L" {
+    enable 
+    mode 1920x1080@60Hz 
+    position 5360,0
+  }
+}
+

@@ -1,0 +1,16 @@
+- name: Install kanshi 
+  ansible.builtin.package: 
+    name: "kanshi"
+    state: present
+  become: yes
+
+- name: Install kanshi files
+  ansible.builtin.include_role: 
+    name: "fileinstaller"
+
+- name: Setup systemd wants for compositor
+  ansible.builtin.file:
+    src: "{{[systemd_user_dir, 'kanshi.service'] | path_join }}"
+    dest: "{{[systemd_user_dir, compositor_wants, 'kanshi.service']  | path_join }}"
+    state: link
+  when: compositor_wants is defined

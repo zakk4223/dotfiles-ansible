@@ -8,3 +8,12 @@ host_roles:
   - k8dev
   - tailscale
   - steam
+wayland_scroll_roles:
+  - swaysome
+  - udiskie
+  - walker
+  - uwsm
+  - nmapplet
+  - waybar
+  - bluetooth
+  - kanshi

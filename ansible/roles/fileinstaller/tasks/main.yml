@@ -1,8 +1,15 @@
+- name: Check for common file directory
+  ansible.builtin.stat:
+    path: "{{ [ansible_parent_role_paths[0], 'files', 'hosts', 'common'] | path_join }}"
+  delegate_to: localhost 
+  register: filecopy_common_dir
+
 - name: Install common files for role
   ansible.builtin.copy:
     src: "{{ [ansible_parent_role_paths[0], 'files', 'hosts', 'common'] | path_join }}/"
     dest: "{{ dotfile_install_base }}/"
     mode: "{{ file_mode | default('preserve') }}"
+  when: filecopy_common_dir.stat.exists and filecopy_common_dir.stat.isdir
 
 
 - name: Check for host specific file directory
