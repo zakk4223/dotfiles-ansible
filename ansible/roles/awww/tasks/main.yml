@@ -1,8 +1,10 @@
-- name: Install awww 
-  ansible.builtin.package: 
-    name: "kanshi"
+- name: Install awww
+  kewlfft.aur.aur: 
+    name:
+      - awww-bin 
     state: present
   become: yes
+  become_user: aur_builder
 
 - name: Install awww files
   ansible.builtin.include_role: 
