@@ -1,0 +1,8 @@
+[Unit]
+Description="Change wallpaper every 2 hours"
+After=graphical-session.target
+
+[Service]
+Restart=always
+RestartSec=7200s
+ExecStart=/home/zakk/bin/awww_random.sh /home/zakk/Pictures/Wallpapers

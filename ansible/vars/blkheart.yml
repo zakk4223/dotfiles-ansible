@@ -18,3 +18,4 @@ wayland_scroll_roles:
   - bluetooth
   - kanshi
   - wlogout
+  - awww
