@@ -1,0 +1,9 @@
+- name: Install wlogout 
+  ansible.builtin.package: 
+    name: "wlogout"
+    state: present
+  become: yes
+
+- name: Install wlogout files
+  ansible.builtin.include_role: 
+    name: "fileinstaller"

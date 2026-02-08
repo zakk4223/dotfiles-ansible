@@ -5,6 +5,11 @@
   become: yes
   become_user: aur_builder
 
+- name: Install sway-contrib (grimshot) 
+  ansible.builtin.package: 
+    name: "sway-contrib"
+    state: present
+  become: yes
 
 - name: Install ScrollWM files
   ansible.builtin.include_role: 
