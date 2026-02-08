@@ -8,6 +8,8 @@ host_roles:
   - k8dev
   - tailscale
   - steam
+host_post_roles:
+  - matugen
 wayland_scroll_roles:
   - swaysome
   - udiskie
@@ -19,3 +21,4 @@ wayland_scroll_roles:
   - kanshi
   - wlogout
   - awww
+

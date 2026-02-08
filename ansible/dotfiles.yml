@@ -15,6 +15,12 @@
     set_fact: 
         host_roles: "{{ common_roles + host_roles }}"
 
+  - name: Combine post run role lists
+    when: host_post_roles is defined and common_post_roles is defined
+    set_fact: 
+        host_roles: "{{ common_post_roles + host_post_roles }}"
+
+
 
   - name: Ensure shell role
     when: host_roles is defined and preferred_shell is defined
@@ -41,6 +47,14 @@
     include_role:
         name: "{{ role_item }}"
     loop: "{{ host_roles }}"
+    loop_control:
+        loop_var: role_item
+
+  - name: Include post roles
+    when: host_post_roles is defined
+    include_role:
+        name: "{{ role_item }}"
+    loop: "{{ host_post_roles }}"
     loop_control:
         loop_var: role_item
 

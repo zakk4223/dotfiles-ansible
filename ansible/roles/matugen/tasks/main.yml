@@ -1,0 +1,14 @@
+- name: Install matugen 
+  ansible.builtin.package: 
+    name: "matugen"
+    state: present
+  become: yes
+
+- name: Install matugen files 
+  ansible.builtin.include_role: 
+    name: "fileinstaller"
+
+- name: Assemble final matugen config
+  ansible.builtin.assemble:
+    src: "{{[dotfile_config_base, 'matugen', 'config.d'] | path_join}}"
+    dest: "{{[dotfile_config_base, 'matugen', 'config.toml'] | path_join}}"
