@@ -1,0 +1,10 @@
+- name: Install Telegram 
+  ansible.builtin.package: 
+    name: "telegram-desktop"
+    state: present
+  become: yes
+
+- name: Install telegram files
+  ansible.builtin.include_role: 
+    name: "fileinstaller"
+

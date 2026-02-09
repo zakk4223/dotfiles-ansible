@@ -25,5 +25,6 @@ common_roles:
   - jq
   - yq
   - docker
+  - telegram
 
 
