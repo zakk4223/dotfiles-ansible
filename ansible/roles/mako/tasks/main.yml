@@ -1,0 +1,10 @@
+- name: Install mako 
+  ansible.builtin.package: 
+    name: "mako"
+    state: present
+  become: yes
+
+- name: Install mako files
+  ansible.builtin.include_role: 
+    name: "fileinstaller"
+
