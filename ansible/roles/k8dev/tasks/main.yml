@@ -4,6 +4,7 @@
       - "kubectl"
       - "istio"
       - "helm"
+      - "k9s"
     state: present
   become: yes
 
