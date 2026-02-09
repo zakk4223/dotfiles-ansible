@@ -20,6 +20,13 @@
   become: yes
   become_user: aur_builder
 
+- name: Install kapp 
+  kewlfft.aur.aur: 
+    name: "kapp"
+    state: present
+  become: yes
+  become_user: aur_builder
+
 - name: Install devcontainer cli 
   kewlfft.aur.aur: 
     name: "devcontainer-cli"
