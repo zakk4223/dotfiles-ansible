@@ -5,6 +5,7 @@
       - "istio"
       - "helm"
       - "k9s"
+      - "skopeo"
     state: present
   become: yes
 
