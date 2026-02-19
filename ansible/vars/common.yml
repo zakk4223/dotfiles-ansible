@@ -26,5 +26,6 @@ common_roles:
   - yq
   - docker
   - telegram
+  - pre-commit
 
 
