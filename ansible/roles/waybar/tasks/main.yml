@@ -23,6 +23,9 @@
     state: link
   when: compositor_wants is defined
 
+- set_fact:
+    uwsm_service_files: ['udiskie.service']
+
 - name: Install fonts for waybar 
   ansible.builtin.package: 
     name: 

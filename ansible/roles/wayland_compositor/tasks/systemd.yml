@@ -1,0 +1,16 @@
+- name: Reset systemd service wants
+  set_fact:
+    uwsm_service_files: []
+     
+
+- name: Include compositor role
+  include_role:
+    name: "{{ wayland_compositor_role_item }}"
+
+- name: Symlink service files if uwsm
+  ansible.builtin.file:
+    src: "{{ [systemd_user_dir, item] | path_join }}"
+    dest: "{{ [ systemd_user_dir, vars[compositor_name + '_compositor_wants'], item ] | path_join }}"
+    state: link
+  loop: "{{ uwsm_service_files }}"
+  when: "'uwsm' in vars[compositor_name + '_combined_roles'] and uwsm_service_files | length > 0"

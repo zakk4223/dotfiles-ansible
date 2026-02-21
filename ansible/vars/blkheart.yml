@@ -10,16 +10,3 @@ host_roles:
   - steam
 host_post_roles:
   - matugen
-wayland_scroll_roles:
-  - swaysome
-  - udiskie
-  - walker
-  - uwsm
-  - nmapplet
-  - waybar
-  - bluetooth
-  - kanshi
-  - wlogout
-  - awww
-  - mako
-

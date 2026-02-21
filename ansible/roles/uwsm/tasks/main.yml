@@ -3,5 +3,4 @@
     name: "uwsm"
     state: present
   become: yes
-  when: '"uwsm" in wayland_scroll_roles' 
 

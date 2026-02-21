@@ -1,0 +1,37 @@
+- name: Combine compositor common and host roles
+  set_fact:
+    "{{ compositor_name }}_combined_roles": "{{ vars[compositor_name + '_common_roles'] | default([]) + vars[compositor_name + '_host_roles'] | default([]) }}"
+
+
+- name: Set compositor wants if not set
+  set_fact:
+    "{{ compositor_name }}_compositor_wants": "wayland-wm@{{ compositor_name }}.service.wants"
+  when: vars[compositor_name + '_compositor_wants'] is not defined
+
+- name: Configure uwsm for scroll
+  when: '"uwsm" in vars[compositor_name + "_combined_roles"]'
+  block:
+    - name: "Create wayland-session"
+      ansible.builtin.file:
+        path: "/usr/local/share/wayland-sessions/"
+        state: directory
+        mode: '0755'
+      become: yes
+    - name: Install UWSM desktop override file
+      ansible.builtin.copy:
+        src: "{{[ ansible_parent_role_paths[0], 'files', 'uwsm', compositor_name + '.desktop'] | path_join }}"
+        dest: "/usr/local/share/wayland-sessions/{{ compositor_name }}.desktop"
+        mode: "{{ file_mode | default('preserve') }}"
+      become: yes
+    - name: "Create wants directory"
+      ansible.builtin.file:
+        path: "{{[systemd_user_dir, vars[compositor_name + '_compositor_wants']] | path_join }}/"
+        state: directory
+    - include_tasks: "{{ ansible_parent_role_paths[0] }}/tasks/uwsm.yml"
+      when: '(ansible_parent_role_paths[0] + "/tasks/uwsm.yml") is file' 
+
+
+- include_tasks: systemd.yml
+  loop: "{{ vars[compositor_name + '_combined_roles'] }}"
+  loop_control:
+    loop_var: wayland_compositor_role_item

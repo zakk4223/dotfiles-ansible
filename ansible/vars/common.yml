@@ -5,13 +5,17 @@ preferred_shell: "zsh"
 preferred_terminal: "kitty"
 preferred_launcher: "walker"
 wayland_use_uwsm: true
-wayland_scroll_roles:
+scroll_common_roles:
   - swaysome
   - udiskie
   - walker
   - uwsm
   - nmapplet
   - waybar
+  - bluetooth
+  - wlogout
+  - awww
+  - mako
   - bluetooth
 common_roles:
   - ssh

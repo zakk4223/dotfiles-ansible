@@ -10,16 +10,5 @@
   ansible.builtin.include_role: 
     name: "fileinstaller"
 
-- name: Setup systemd wants (awww) for compositor
-  ansible.builtin.file:
-    src: "{{[systemd_user_dir, 'awww.service'] | path_join }}"
-    dest: "{{[systemd_user_dir, compositor_wants, 'awww.service']  | path_join }}"
-    state: link
-  when: compositor_wants is defined
-
-- name: Setup systemd wants (awww-periodic) for compositor
-  ansible.builtin.file:
-    src: "{{[systemd_user_dir, 'awww-periodic.service'] | path_join }}"
-    dest: "{{[systemd_user_dir, compositor_wants, 'awww-periodic.service']  | path_join }}"
-    state: link
-  when: compositor_wants is defined
+- set_fact:
+    uwsm_service_files: ['awww.service', 'awww-periodic.service']
