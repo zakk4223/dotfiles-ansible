@@ -27,5 +27,6 @@ common_roles:
   - docker
   - telegram
   - pre-commit
+  - opentofu
 
 

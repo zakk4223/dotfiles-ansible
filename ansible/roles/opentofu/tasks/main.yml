@@ -1,0 +1,4 @@
+- name: Install opentofu 
+  ansible.builtin.package:
+    name: opentofu 
+  become: yes
