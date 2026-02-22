@@ -10,5 +10,6 @@ host_roles:
   - steam
 scroll_host_roles:
   - pulse-autoswitch
+  - xwayland-primary
 host_post_roles:
   - matugen

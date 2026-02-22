@@ -1,0 +1,12 @@
+[Unit]
+Description=XWayland Primary
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+StandardOutput=syslog
+StandardError=syslog
+ExecStart=/home/zakk/bin/xwayland_primary.py
+Restart=on-failure
+RestartSec=1
+

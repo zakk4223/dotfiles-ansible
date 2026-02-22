@@ -1,0 +1,14 @@
+- name: Install xwayland-primary packages 
+  ansible.builtin.package: 
+    name: "python-i3ipc"
+    state: present
+  become: yes
+
+
+
+- name: Install xwayland-primary files
+  ansible.builtin.include_role: 
+    name: "fileinstaller"
+
+- set_fact:
+    uwsm_service_files: ['xwayland-primary.service']
