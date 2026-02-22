@@ -1,0 +1,9 @@
+- name: Install putty 
+  ansible.builtin.package: 
+    name: "putty"
+    state: present
+  become: yes
+
+- name: Install mister files
+  ansible.builtin.include_role: 
+    name: "fileinstaller"

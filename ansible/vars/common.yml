@@ -34,5 +34,7 @@ common_roles:
   - telegram
   - pre-commit
   - opentofu
+  - romtools
+  - mister
 
 

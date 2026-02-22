@@ -1,0 +1,10 @@
+[Unit]
+Description=Swaymonad
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/home/zakk/bin/pulse_autoswitch.py HDMI-A-1 
+Restart=on-failure
+
+
