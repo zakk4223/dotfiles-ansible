@@ -23,9 +23,6 @@
     state: link
   when: compositor_wants is defined
 
-- set_fact:
-    uwsm_service_files: ['udiskie.service']
-
 - name: Install fonts for waybar 
   ansible.builtin.package: 
     name: 
@@ -33,3 +30,12 @@
       - "noto-fonts-emoji"
     state: present 
   become: yes
+
+
+
+- name: Install python-pulsectl 
+  kewlfft.aur.aur: 
+    name: "python-pulsectl"
+    state: present
+  become: yes
+  become_user: aur_builder

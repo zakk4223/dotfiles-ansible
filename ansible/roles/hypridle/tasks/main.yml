@@ -1,0 +1,14 @@
+- name: Install hypridle 
+  ansible.builtin.package: 
+    name: 
+      - hypridle
+      - wlopm
+    state: present
+  become: yes
+
+- name: Install Hypridle files
+  ansible.builtin.include_role: 
+    name: "fileinstaller"
+
+- set_fact:
+    uwsm_service_files: ['hypridle.service']

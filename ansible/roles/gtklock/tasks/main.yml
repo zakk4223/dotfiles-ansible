@@ -1,0 +1,10 @@
+- name: Install gtklock 
+  ansible.builtin.package: 
+    name: "gtklock"
+    state: present
+  become: yes
+
+- name: Install gtklock files
+  ansible.builtin.include_role: 
+    name: "fileinstaller"
+

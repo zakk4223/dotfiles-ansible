@@ -17,6 +17,8 @@ scroll_common_roles:
   - awww
   - mako
   - bluetooth
+  - hypridle
+  - gtklock
 common_roles:
   - ssh
   - zsh

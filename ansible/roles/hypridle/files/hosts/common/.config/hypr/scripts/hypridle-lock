@@ -1,0 +1,23 @@
+#!/bin/sh
+
+
+
+#IMAGE_URL="https://picsum.photos/1920/1080?random"
+#IMAGE_COLLECTION="${XDG_PICTURES_DIR:-$HOME/Pictures}"
+
+
+
+#Download random picture for background
+
+
+#IMAGE_JPG="$IMAGE_COLLECTION/picsum.photos-$(date +"%Y%m%dT%H%M%S").png"
+#IMAGE_PNG="$IMAGE_COLLECTION/hyprlock.png"
+
+#wget -q -O "$IMAGE_JPG" "$IMAGE_URL"
+
+#convert "$IMAGE_JPG" "$IMAGE_PNG"
+
+#/usr/bin/hyprlock
+/usr/bin/gtklock
+
+

@@ -1,0 +1,8 @@
+[Unit]
+Description=Hypridle
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/hypridle
+Slice=background-graphical.slice
+Restart=on-failure
