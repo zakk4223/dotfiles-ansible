@@ -36,5 +36,6 @@ common_roles:
   - opentofu
   - romtools
   - mister
+  - flatseal
 
 

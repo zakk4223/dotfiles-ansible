@@ -1,0 +1,9 @@
+- name: Install Flatseal 
+  ansible.builtin.package: 
+    name: "flatseal"
+    state: present
+  become: yes
+
+- name: Install flatseal files
+  ansible.builtin.include_role: 
+    name: "fileinstaller"
