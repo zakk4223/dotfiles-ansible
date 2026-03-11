@@ -19,6 +19,20 @@ scroll_common_roles:
   - bluetooth
   - hypridle
   - gtklock
+  - xdg-desktop-portal-wlr
+hyprland_common_roles:
+  - udiskie
+  - walker
+  - uwsm
+  - nmapplet
+  - waybar
+  - bluetooth
+  - wlogout
+  - awww
+  - mako
+  - bluetooth
+  - hypridle
+  - gtklock
 common_roles:
   - ssh
   - zsh
@@ -37,5 +51,8 @@ common_roles:
   - romtools
   - mister
   - flatseal
+  - github-cli
+  - hyprland
+  - gitconfig
 
 

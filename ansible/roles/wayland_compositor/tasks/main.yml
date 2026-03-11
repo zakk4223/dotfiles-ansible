@@ -23,6 +23,8 @@
         dest: "/usr/local/share/wayland-sessions/{{ compositor_name }}.desktop"
         mode: "{{ file_mode | default('preserve') }}"
       become: yes
+      when: not (skip_uwsm | default(false)) 
+
     - name: "Create wants directory"
       ansible.builtin.file:
         path: "{{[systemd_user_dir, vars[compositor_name + '_compositor_wants']] | path_join }}/"

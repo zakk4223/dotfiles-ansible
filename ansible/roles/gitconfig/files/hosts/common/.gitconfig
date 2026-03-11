@@ -1,0 +1,5 @@
+[user]
+	email = zakk@rsdio.com
+	name = Zakk
+[init]
+	templateDir = /home/zakk/.git-template

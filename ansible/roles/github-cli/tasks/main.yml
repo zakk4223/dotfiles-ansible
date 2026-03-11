@@ -1,0 +1,10 @@
+- name: Install github-cli 
+  ansible.builtin.package: 
+    name: "github-cli"
+    state: present
+  become: yes
+
+- name: Install github-cli files
+  ansible.builtin.include_role: 
+    name: "fileinstaller"
+

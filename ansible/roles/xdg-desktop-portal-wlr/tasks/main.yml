@@ -1,0 +1,10 @@
+- name: Install wlr portal 
+  ansible.builtin.package: 
+    name: "xdg-desktop-portal-wlr"
+    state: present
+  become: yes
+
+- name: Install wlr portal files 
+  ansible.builtin.include_role: 
+    name: "fileinstaller"
+

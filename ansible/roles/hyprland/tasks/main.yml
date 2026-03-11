@@ -1,0 +1,31 @@
+- name: Install hyprland 
+  ansible.builtin.package: 
+    name: "hyprland"
+    state: present
+  become: yes
+
+- name: Install hyprland files
+  ansible.builtin.include_role: 
+    name: "fileinstaller"
+
+- name: Create Launcher config snippet 
+  ansible.builtin.lineinfile:
+    path: "{{ [dotfile_config_base, 'hypr', 'hyprland', 'vars.d', 'launcher.conf'] | path_join }}"
+    line: "$menu = {{ preferred_launcher }}"
+    create: true
+  when: preferred_launcher is defined 
+
+- name: Create Terminal config snippet 
+  ansible.builtin.lineinfile:
+    path: "{{ [dotfile_config_base, 'hypr', 'hyprland', 'vars.d', 'terminal.conf'] | path_join }}"
+    line: "$terminal = {{ preferred_terminal }}"
+    create: true
+  when: preferred_terminal is defined
+
+- name: Wayland compositor setup
+  ansible.builtin.include_role:
+    name: "wayland_compositor"
+  vars: 
+    compositor_name: "hyprland"
+    skip_uwsm: true
+
