@@ -2,3 +2,8 @@
   ansible.builtin.package:
     name: pre-commit 
   become: yes
+
+- name: Install pre-commit template
+  ansible.builtin.shell:
+    cmd: /usr/bin/pre-commit init-templatedir ~/.git-template
+    creates: "{{ [ansible_env.HOME, '.git-template/hooks/pre-commit'] | path_join }}"
