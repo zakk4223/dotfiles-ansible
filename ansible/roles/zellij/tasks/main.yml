@@ -1,0 +1,9 @@
+- name: Install Zellij 
+  ansible.builtin.package: 
+    name: "zellij"
+    state: present
+  become: yes
+
+- name: Install Zellij files
+  ansible.builtin.include_role: 
+    name: "fileinstaller"

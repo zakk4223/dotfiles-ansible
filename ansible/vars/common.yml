@@ -54,5 +54,6 @@ common_roles:
   - github-cli
   - hyprland
   - gitconfig
+  - zellij
 
 
