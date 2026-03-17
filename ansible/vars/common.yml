@@ -55,5 +55,6 @@ common_roles:
   - hyprland
   - gitconfig
   - zellij
+  - tmux
 
 

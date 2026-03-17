@@ -1,0 +1,27 @@
+- name: Install tmux 
+  ansible.builtin.package: 
+    name: "tmux"
+    state: present
+  become: yes
+
+- ansible.builtin.file:
+    path:  "{{ [dotfile_config_base, 'tmux', 'plugins', 'tpm'] | path_join }}"
+    state: directory
+
+- name: Install tmux files
+  ansible.builtin.include_role: 
+    name: "fileinstaller"
+
+- name: Clone TPM
+  ansible.builtin.git:
+    repo: 'https://github.com/tmux-plugins/tpm'
+    dest: "{{ [dotfile_config_base, 'tmux', 'plugins', 'tpm'] | path_join }}"
+    version: master
+    force: yes
+
+- name: Install TPM plugins
+  ansible.builtin.command:
+    cmd: "{{ [dotfile_config_base, 'tmux', 'plugins', 'tpm', 'bin', 'install_plugins'] | path_join }}"
+    chdir: "{{ dotfile_install_base }}"
+  environment:
+    TMUX_CONF: "{{ [dotfile_config_base, 'tmux', 'tmux.conf'] | path_join }}"
