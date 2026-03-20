@@ -6,6 +6,7 @@
       - "helm"
       - "k9s"
       - "skopeo"
+      - "kubectx"
     state: present
   become: yes
 
