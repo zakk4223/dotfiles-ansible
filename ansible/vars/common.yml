@@ -56,5 +56,6 @@ common_roles:
   - gitconfig
   - zellij
   - tmux
+  - zoxide
 
 

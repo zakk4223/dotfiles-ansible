@@ -92,6 +92,9 @@ vi() {
 	fi
 }
 
+if command -v zoxide &> /dev/null; then
+	eval "$(zoxide init zsh --cmd cd)"
+fi
 
 
 bindkey "^a" beginning-of-line

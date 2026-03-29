@@ -1,0 +1,10 @@
+- name: Install Zoxide 
+  ansible.builtin.package: 
+    name: "zoxide"
+    state: present
+  become: yes
+
+- name: Install zoxide files
+  ansible.builtin.include_role: 
+    name: "fileinstaller"
+
