@@ -25,3 +25,12 @@
     chdir: "{{ dotfile_install_base }}"
   environment:
     TMUX_CONF: "{{ [dotfile_config_base, 'tmux', 'tmux.conf'] | path_join }}"
+
+- name: Install Sesh
+  kewlfft.aur.aur: 
+    name:
+      - sesh-bin
+    state: present
+  become: yes
+  become_user: aur_builder
+
