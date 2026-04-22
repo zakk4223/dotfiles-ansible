@@ -1,0 +1,2 @@
+export WLR_RENDERER=vulkan
+export WLR_DRM_DEVICES=/dev/dri/by-path/amd-igpu:/dev/dri/by-path/amd-9700XT

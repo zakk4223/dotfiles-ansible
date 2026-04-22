@@ -33,6 +33,18 @@ hyprland_common_roles:
   - bluetooth
   - hypridle
   - gtklock
+mango_common_roles:
+  - udiskie
+  - walker
+  - uwsm
+  - nmapplet
+  - waybar
+  - bluetooth
+  - wlogout
+  - awww
+  - mako
+  - hypridle
+  - gtklock
 common_roles:
   - ssh
   - zsh

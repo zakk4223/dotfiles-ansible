@@ -1,0 +1,7 @@
+- name: Create UWSM activation config snippet 
+  ansible.builtin.lineinfile:
+    path: "{{ [dotfile_config_base, 'scroll', 'config.d', '99-uwsm_activate.conf'] | path_join }}"
+    line: "exec uwsm finalize SWAYSOCK I3SOCK SCROLLSOCK"
+    create: true
+
+

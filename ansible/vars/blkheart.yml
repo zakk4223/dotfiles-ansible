@@ -2,12 +2,15 @@ host_roles:
   - discord 
   - firefox
   - scrollwm
+  - mangowm
   - slack
   - polkit
   - gnome-keyring
   - k8dev
   - tailscale
   - steam
+mango_host_roles:
+  - kanshi
 scroll_host_roles:
   - pulse-autoswitch
   - xwayland-primary
